@@ -1,26 +1,33 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-const { withSentryConfig } = require('@sentry/nextjs');
-
-const moduleExports = {
- // next config
-};
-
-const sentryWebpackPluginOptions = {
- // sentry config
-}
-
-const withPlugins = require('next-compose-plugins')
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
- enabled: process.env.ANALYZE === 'true',
-})
-
-module.exports = async (phase, { defaultConfig }) => {
- delete defaultConfig['webpackDevMiddleware'];
-
- return withPlugins(
-     [withBundleAnalyzer],
-     withSentryConfig(moduleExports, sentryWebpackPluginOptions)
- )(phase, { defaultConfig });
-}
+const nextConfig = withPwa(
+    {
+      pwa: {
+        dest: "public"
+      }
+    },
+    withCSS(
+      withSass({
+        webpack(config, options) {
+          config.module.rules.push(
+            {
+              test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+              use: {
+                loader: "url-loader",
+                options: {
+                  limit: 100000
+                }
+              }
+            },
+            {
+              test: /\.(ogg|mp3|wav|mpe?g)$/i,
+              loader: "file-loader",
+              options: {
+                name: "[path][name].[ext]"
+              }
+            }
+          );
+          return config;
+        }
+      })
+    )
+  );
+  module.exports = nextConfig;
