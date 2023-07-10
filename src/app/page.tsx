@@ -1,10 +1,11 @@
-import Main from "@/pages/main";
+import Home from "@/pages/Home";
+
 
 
 const Page = () => {
   return (
     <>
-      <Main />
+        <Home />
     </>
   )
 }

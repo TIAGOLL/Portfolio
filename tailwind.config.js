@@ -9,10 +9,20 @@ module.exports = {
     extend: {
       colors:
       {
-        'main-color': '#506ee5',
-        'secondary-color': '#7037cd',
-        'bg-color': '#d9d9d9',
+        'main': '#506ee5',
+        'secondary': '#7037cd',
+        'background': '#d9d9d9',
       },
+      fontFamily: {
+        'main': ['Verdana, Arial, system-ui']
+      },
+      boxShadow: {
+        'link': '0 0px 35px 10px rgba(0, 0, 0, 0.3)',
+      },
+      textColor: {
+        'description': '#d9d9d9',
+        'tittle': '#fff'
+      }
     },
     variants: {},
     plugins: [],
