@@ -12,7 +12,7 @@ const Body = () => {
                     </div>
 
                     <div className="w-4/12 items-center justify-center flex">
-                        <Image className='shadow-link rounded-full border-zinc-600 border-2' src="/images/myPhoto.png" alt="Minha foto" width={500} height={0} />
+                        <Image className='shadow-link rounded-full border-zinc-600 border-2' src="https://avatars.githubusercontent.com/u/107972949?v=4" alt="Minha foto" width={500} height={0} />
                     </div>
                 </div>
             </div>
