@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 const Body = () => {
 
     const pathname = usePathname();
+    console.log(pathname)
 
     return (
         <>
