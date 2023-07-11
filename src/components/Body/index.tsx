@@ -2,9 +2,13 @@
 
 import SearchPath from '@/services/SearchPath';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 
 const Body = () => {
+
+    const pathname = usePathname();
+
     return (
         <>
             <div className='w-screen items-center justify-center flex'>
@@ -15,7 +19,7 @@ const Body = () => {
                     </div>
 
                     <div className="w-4/12 items-center justify-center flex">
-                        <Image className='shadow-link rounded-full border-zinc-600 border-2' src={`${SearchPath()}myphoto.png`} alt="Minha foto" width={500} height={0} />
+                        <Image className='shadow-link rounded-full border-zinc-600 border-2' src={`${pathname}myphoto.png`} alt="Minha foto" width={500} height={0} />
                     </div>
                 </div>
             </div>
