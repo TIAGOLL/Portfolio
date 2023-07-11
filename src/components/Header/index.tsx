@@ -11,7 +11,7 @@ const Header = () => {
                 <div>
                     <h2 className="font-main text-6xl pt-5 pl-10 pb-5">
                         <Link href="https://tiagoll.github.io/portfolio/" prefetch={false}>
-                            <Image src={'/portfolio/logo.png'} alt="Logo" width={300} height={0} />
+                            <Image src={'images/logo.png'} alt="Logo" width={300} height={0} />
                         </Link>
                     </h2>
                 </div>
