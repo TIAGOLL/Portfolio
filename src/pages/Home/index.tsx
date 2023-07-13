@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Image from "next/image";
 
-const home = () => {
+const Home = () => {
 
   return (
     <>
@@ -41,4 +41,4 @@ const home = () => {
   )
 }
 
-export default home; 
+export default Home;
