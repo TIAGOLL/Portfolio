@@ -11,7 +11,6 @@ const Header = () => {
 
     const [isVisible, setVisible] = useState(true)
 
-
     return (
         <>
             <header className="bg-secondary flex flex-row w-screen text-white p-1 pb-10">
