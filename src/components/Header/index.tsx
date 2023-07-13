@@ -1,10 +1,8 @@
 'use client'
 
 import MenuIcon from '@/icons/MenuIcon';
-import Link from 'next/link';
 import { useState } from 'react';
 import NavLogo from '../NavLogo';
-import MyHistory from '../../pages/myhistory/index';
 import NavLink from '../NavLink';
 
 
