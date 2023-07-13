@@ -1,6 +1,6 @@
 
 
-const MyHistory = () => {
+const myhistory = () => {
     return (
         <>
             <h1>minha história</h1>
@@ -8,4 +8,4 @@ const MyHistory = () => {
     )
 }
 
-export default MyHistory;
+export default myhistory;
