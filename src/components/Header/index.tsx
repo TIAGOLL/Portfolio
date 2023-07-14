@@ -13,7 +13,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="bg-secondary flex flex-row w-screen text-white p-1 pb-10">
+            <header className="bg-secondary flex flex-row w-screen text-white pt-2 pl-4 pr-4 lg:pb-10">
                 <NavLogo />
                 <div className='flex w-full items-center justify-end'>
                     <nav className="space-x-12 hidden flex-row items-center justify-center font-bold lg:flex pr-10">
@@ -24,15 +24,15 @@ const Header = () => {
                     </nav>
 
                     {isVisible && (
-                        <div className='justify-center items-center pr-2 lg:hidden'>
+                        <div className='justify-center items-center lg:hidden'>
                             <button onClick={() => setVisible((prev) => !prev)}>
                                 <MenuIcon width={20} strokeWidht={'2.5'} />
                             </button>
                         </div>)}
 
                     {!isVisible && (
-                        <div className='justify-center items-center pr-2 lg:hidden'>
-                            <button onClick={() => setVisible((prev) => !prev)} className='font-bold items-center justify-center text-xl' >
+                        <div className='justify-center items-center lg:hidden'>
+                            <button onClick={() => setVisible((prev) => !prev)} className='font-bold items-center justify-center text-xl pr-1' >
                                 X
                             </button>
                         </div>)}

@@ -1,4 +1,6 @@
 import Header from "@/components/Header";
+import Section from "@/components/Section";
+import UsedTechs from "@/components/UsedTechs";
 import Image from "next/image";
 
 const Home = () => {
@@ -8,16 +10,16 @@ const Home = () => {
       <Header />
 
       {/* MOBILE */}
-      <div className='w-screen items-center justify-center flex'>
-        <div className='w-full flex bg-secondary pt- flex-col items-center justify-center lg:hidden'>
+      <body className='w-screen items-center justify-center flex'>
+        <div className='pb-20 w-full flex bg-secondary pt- flex-col items-center justify-center bg-gradient-to-t from-1% from-[#DCCEF2] via-10% via-[#AB89E1] lg:hidden'>
 
-          <div className="items-center justify-center flex pt-5 lg:w-4/12">
+          <div className="w-48 items-center justify-center flex pt-5 lg:w-4/12">
             <Image className='shadow-link rounded-full border-zinc-600 border-2' src={'images/myphoto.png'} alt="Minha foto" width={500} height={0} />
           </div>
 
-          <div className='text-center justify-center p-5 flex flex-col space-y-2'>
-            <h1 className='font-bold font-[Montserrat] text-md text-tittle'>Estudante e entusiasta da programação</h1>
-            <p className='text-description font-semibold text-sm'>Hoje estou focando em dominar o Next.js, um framework que me está me levando para o full-stack!</p>
+          <div className='text-center justify-center flex flex-col space-y-2'>
+            <h1 className='font-bold font-[Montserrat] text-2xl text-tittle'>Estudante e entusiasta da programação</h1>
+            <p className='text-description font-semibold text-md'>Hoje estou focando em dominar o Next.js, um framework que me está me levando para o full-stack!</p>
           </div>
 
 
@@ -26,7 +28,7 @@ const Home = () => {
 
 
         {/* PC */}
-        <div className='w-full bg-secondary lg:flex hidden'>
+        <div className='w-full bg-secondary lg:flex hidden mb-10'>
           <div className='w-8/12 text-center justify-start pt-28 flex flex-col space-y-10'>
             <h1 className='font-bold font-[Montserrat] text-5xl text-tittle'>Estudante e entusiasta da programação</h1>
             <p className='text-description font-semibold'>Hoje estou focando em dominar o Next.js, um framework que me está me levando para o full-stack!</p>
@@ -36,7 +38,18 @@ const Home = () => {
             <Image className='shadow-link rounded-full border-zinc-600 border-2' src={'images/myphoto.png'} alt="Minha foto" width={500} height={0} />
           </div>
         </div>
-      </div>
+
+        <section className="flex-row flex w-screen justify-center items-center">
+          <div className="items-center flex flex-row justify-center w-10/12 space-x-2">
+            <Section width={4} text="left" items="center" justify="center">
+              <UsedTechs />
+            </Section>
+            <Section width={8} text="left" items="center" justify="center">
+              <UsedTechs />
+            </Section>
+          </div>
+        </section>
+      </body>
     </>
   )
 }
