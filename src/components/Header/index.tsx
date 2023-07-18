@@ -13,7 +13,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="bg-secondary flex flex-row w-screen text-white pt-2 pl-4 pr-4 lg:pb-10">
+            <header className="bg-secondary flex flex-row w-full text-white pt-2 pl-4 pr-4 lg:pb-10">
                 <NavLogo />
                 <div className='flex w-full items-center justify-end'>
                     <nav className="space-x-12 hidden flex-row items-center justify-center font-bold lg:flex pr-10">

@@ -18,6 +18,7 @@ module.exports = {
       },
       boxShadow: {
         'link': '0 0px 35px 10px rgba(0, 0, 0, 0.3)',
+        'cardRepos': '0 0px 20px 5px rgba(0, 0, 0, 0.3)',
       },
       textColor: {
         'description': '#d9d9d9',
