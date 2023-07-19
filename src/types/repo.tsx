@@ -5,4 +5,6 @@ export type RepoProps = {
   stargazers_count: number;
   forks_count: number;
   created_at: string;
+  description: string;
+  homepage: string;
 };
