@@ -1,12 +1,18 @@
 import { RepoProps } from "@/types/repo";
-import { AiOutlineStar, AiOutlineBranches } from 'react-icons/ai';
+import { AiOutlineAlignLeft } from 'react-icons/ai';
 import { FaCode, FaStar } from 'react-icons/fa';
 import { SiTrailforks } from 'react-icons/si';
 import { BsCalendar2DateFill } from 'react-icons/bs';
 import Link from 'next/link';
 
-const RepositoryCard = ({ name, language, html_url, forks_count, stargazers_count, created_at, description, homepage }: RepoProps) => {
-    created_at = created_at.slice(0, 10)
+const RepositoryCard = ({ name, language, html_url, forks_count, stargazers_count, created_at, description, homepage, size }: RepoProps) => {
+
+
+
+    created_at = created_at.slice(0, 10).split('-').reverse().join('/');
+
+
+
     return (
         <div className="flex flex-col w-11/12 font-semibold items-center border-white text-zinc-700 shadow-cardRepos border-2 rounded-xl lg:m-6 lg:p-4 lg:w-5/12 ">
 
@@ -16,7 +22,7 @@ const RepositoryCard = ({ name, language, html_url, forks_count, stargazers_coun
             </div>
 
             {/* Body */}
-            <div className="flex flex-col w-10/12 items-start justify-center text-lg p-6 lg:flex-row lg:space-x-6 lg:items-center">
+            <div className="flex flex-col w-10/12 items-start space-y-2 justify-center text-lg p-6 lg:flex-row lg:space-x-6 lg:items-center lg:flex-wrap">
                 <div className="flex flex-row items-center space-x-2">
                     <FaCode />
                     <p>
@@ -37,6 +43,10 @@ const RepositoryCard = ({ name, language, html_url, forks_count, stargazers_coun
                     <span>{created_at}</span>
                 </div>
 
+                <div className="items-center flex flex-row space-x-1">
+                    <AiOutlineAlignLeft />
+                    <span>{size} lines</span>
+                </div>
 
             </div>
 

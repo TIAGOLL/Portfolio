@@ -4,7 +4,7 @@ const UsedTechs = () => {
 
     return (
         <>
-            <div className="flex flex-row pt-6 space-x-2 items-center justify-center">
+            <div className="flex flex-row p-6 space-x-2 items-center justify-center">
                 <Image className="rounded-3xl shadow-xl shadow-violet-950" height={0} src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" alt="Logo JS" width={30} />
                 <Image className="rounded-3xl shadow-xl shadow-violet-950" height={0} src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" alt='Logo TS' width={30} />
                 <Image className="rounded-3xl shadow-xl shadow-violet-950" height={0} src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" alt="Logo React" width={30} />

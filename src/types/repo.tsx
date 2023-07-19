@@ -7,4 +7,5 @@ export type RepoProps = {
   created_at: string;
   description: string;
   homepage: string;
+  size: number;
 };
