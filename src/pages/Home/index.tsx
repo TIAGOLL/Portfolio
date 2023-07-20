@@ -6,7 +6,8 @@ import { useState, useEffect } from "react";
 import { RepoProps } from '@/types/repo';
 import RepositoryCard from "@/components/RepositoryCard";
 import { AiOutlineLoading } from 'react-icons/ai'
-import LoadingIcon from "@/icons/LoadingIcon";
+import { OneEightyRingWithBg } from "react-svg-spinners";
+import LoadingIcon from "@/icons/LodingIcon";
 
 
 export default function Home() {
@@ -50,7 +51,7 @@ export default function Home() {
 
             {/* MOBILE */}
             <body className='w-full items-center justify-center flex'>
-                <div className='pb-20 w-full flex bg-secondary flex-col items-center justify-center mb-10 lg:hidden'>
+                <div className='pb-20 p-2 w-full flex bg-secondary flex-col items-center justify-center mb-10 lg:hidden'>
 
                     <div className="w-48 items-center justify-center flex pt-5 lg:w-4/12">
                         <Image className='shadow-link rounded-full border-zinc-600 border-2'
@@ -99,18 +100,18 @@ export default function Home() {
                                     <>
                                         {/* PC */}
                                         <div className="items-center justify-center text-center flex-col p-20 hidden lg:flex">
-                                            <LoadingIcon color={'white'} width={70} />
-                                            <p className="w-full flex flex-row text-left text-zinc-700 font-bold text-xl">Carregando...</p>
+                                            <div className="animate-spin "><LoadingIcon /></div>
+                                            <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
                                         </div>
                                         {/* MOBILE */}
-                                        <div className="items-center justify-center text-center flex flex-col p-20 lg:hidden">
-                                            <LoadingIcon color={'white'} width={50} />
-                                            <p className="w-full flex flex-row text-left text-zinc-700 font-bold text-2xl ">Carregando...</p>
+                                        <div className="items-center justify-center text-center flex flex-col p-10 lg:hidden">
+                                            <div className="animate-spin "><LoadingIcon strokeWidht={15}/></div>
+                                            <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
                                         </div>
                                     </>
                                 }
 
-                                <div className="flex-col flex w-full justify-center items-center space-y-6 lg:flex-wrap lg:flex-row">
+                                <div className="flex-col flex justify-center items-center space-y-6 lg:space-y-0 lg:flex-wrap lg:flex-row">
                                     {
                                         repos.map((repo: RepoProps) => (
                                             <RepositoryCard key={repo.name} {...repo} />

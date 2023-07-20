@@ -22,7 +22,7 @@ const RepositoryCard = ({ name, language, html_url, forks_count, stargazers_coun
             </div>
 
             {/* Body */}
-            <div className="flex flex-col w-10/12 items-start space-y-2 justify-center text-lg p-6 lg:flex-row lg:space-x-6 lg:items-center lg:flex-wrap">
+            <div className="flex flex-col w-10/12 items-start space-y-2 justify-center text-lg p-6 lg:flex-row lg:space-y-0 lg:space-x-6 lg:items-center lg:flex-wrap">
                 <div className="flex flex-row items-center space-x-2">
                     <FaCode />
                     <p>
@@ -45,7 +45,7 @@ const RepositoryCard = ({ name, language, html_url, forks_count, stargazers_coun
 
                 <div className="items-center flex flex-row space-x-1">
                     <AiOutlineAlignLeft />
-                    <span>{size} lines</span>
+                    <span>{size} Linhas</span>
                 </div>
 
             </div>
