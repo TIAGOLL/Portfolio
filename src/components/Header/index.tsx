@@ -1,5 +1,3 @@
-'use client'
-
 import MenuIcon from '@/icons/MenuIcon';
 import { useState } from 'react';
 import NavLogo from '../NavLogo';

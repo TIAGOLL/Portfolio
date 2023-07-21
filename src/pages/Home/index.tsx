@@ -1,13 +1,16 @@
 'use client'
 import Header from "@/components/Header";
 import UsedTechs from "@/components/UsedTechs";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { RepoProps } from '@/types/repo';
-import RepositoryCard from "@/components/RepositoryCard";
-import { AiOutlineLoading } from 'react-icons/ai'
-import { OneEightyRingWithBg } from "react-svg-spinners";
+import Footer from "@/components/Footer";
 import LoadingIcon from "@/icons/LodingIcon";
+import RepositoryCard from "@/components/RepositoryCard";
+import Image from "next/image";
+import { RepoProps } from '@/types/repo';
+import { useState, useEffect } from "react";
+
+
+
+
 
 
 export default function Home() {
@@ -24,9 +27,7 @@ export default function Home() {
                 throw 'Data está vazio'
             }
 
-            let orderedRepos = data.sort(
-                (a: RepoProps, b: RepoProps) => b.stargazers_count - a.stargazers_count
-            );
+            let orderedRepos = data.sort((a: RepoProps, b: RepoProps) => b.stargazers_count - a.stargazers_count);
 
             orderedRepos = orderedRepos.slice(0, 4);
 
@@ -44,13 +45,11 @@ export default function Home() {
         fetchAllData()
     }, [])
 
-
     return (
         <>
-            <Header />
-
             {/* MOBILE */}
             <body className='w-full items-center justify-center flex'>
+                <Header />
                 <div className='pb-20 p-2 w-full flex bg-secondary flex-col items-center justify-center mb-10 lg:hidden'>
 
                     <div className="w-48 items-center justify-center flex pt-5 lg:w-4/12">
@@ -105,7 +104,7 @@ export default function Home() {
                                         </div>
                                         {/* MOBILE */}
                                         <div className="items-center justify-center text-center flex flex-col p-10 lg:hidden">
-                                            <div className="animate-spin "><LoadingIcon strokeWidht={15}/></div>
+                                            <div className="animate-spin "><LoadingIcon strokeWidht={15} /></div>
                                             <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
                                         </div>
                                     </>
@@ -124,7 +123,12 @@ export default function Home() {
 
                     </div>
                 </section>
+
+                <Footer />
             </body>
+
         </>
     )
 }
+
+// export default Home;
