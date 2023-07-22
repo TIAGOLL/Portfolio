@@ -9,20 +9,17 @@ import { RepoProps } from '@/types/repo';
 import { useState, useEffect } from "react";
 
 
-
-
-
-
 export default function Home() {
 
     const [loading, setLoading] = useState(true)
     const [repos, setRepos] = useState<RepoProps[] | []>(Array);
 
-    const fetchAllData = async () => {
+    const gitHubApi = async () => {
         try {
             setLoading(true)
             const response = await fetch('https://api.github.com/users/TIAGOLL/repos')
             const data = await response.json()
+            console.log(data)
             if (!data) {
                 throw 'Data está vazio'
             }
@@ -42,7 +39,7 @@ export default function Home() {
     }
 
     useEffect(() => {
-        fetchAllData()
+        gitHubApi()
     }, [])
 
     return (
@@ -89,36 +86,35 @@ export default function Home() {
 
                 <section className="flex w-full justify-center items-center">
                     <div className="items-center flex justify-center w-11/12 lg:w-10/12 h-full space-x-2">
-                        <div className="w-full justify-center flex flex-col h-full lg:p-5 rounded-2xl bg-violet-400">
-                            <div className="flex flex-col w-full items-center">
-                                <div className="w-full flex text-xl text-center items-center justify-center p-4 mb-5 text-zinc-700 font-bold lg:text-2xl lg:text-left">
-                                    <h1>Meus melhores projetos:</h1>
-                                </div>
+                        <div className="w-full justify-center h-full lg:p-5 rounded-2xl bg-violet-400 flex flex-col items-center">
 
-                                {loading &&
-                                    <>
-                                        {/* PC */}
-                                        <div className="items-center justify-center text-center flex-col p-20 hidden lg:flex">
-                                            <div className="animate-spin "><LoadingIcon /></div>
-                                            <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
-                                        </div>
-                                        {/* MOBILE */}
-                                        <div className="items-center justify-center text-center flex flex-col p-10 lg:hidden">
-                                            <div className="animate-spin "><LoadingIcon strokeWidht={15} /></div>
-                                            <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
-                                        </div>
-                                    </>
-                                }
-
-                                <div className="flex-col flex justify-center items-center space-y-6 lg:space-y-0 lg:flex-wrap lg:flex-row">
-                                    {
-                                        repos.map((repo: RepoProps) => (
-                                            <RepositoryCard key={repo.name} {...repo} />
-                                        ))
-                                    }
-                                </div>
-
+                            <div className="w-full flex text-xl text-center items-center justify-center p-4 mb-5 text-zinc-700 font-bold lg:text-2xl lg:text-left">
+                                <h1>Meus melhores projetos:</h1>
                             </div>
+
+                            {loading &&
+                                <>
+                                    {/* PC */}
+                                    <div className="items-center justify-center text-center flex-col p-20 hidden lg:flex">
+                                        <div className="animate-spin "><LoadingIcon /></div>
+                                        <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
+                                    </div>
+                                    {/* MOBILE */}
+                                    <div className="items-center justify-center text-center flex flex-col p-10 lg:hidden">
+                                        <div className="animate-spin "><LoadingIcon strokeWidht={15} /></div>
+                                        <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
+                                    </div>
+                                </>
+                            }
+
+                            <div className="flex-col flex justify-center items-center pb-3 space-y-6 lg:space-y-0 lg:flex-wrap lg:flex-row">
+                                {
+                                    repos.map((repo: RepoProps) => (
+                                        <RepositoryCard key={repo.name} {...repo} />
+                                    ))
+                                }
+                            </div>
+
                         </div>
 
                     </div>
@@ -130,5 +126,3 @@ export default function Home() {
         </>
     )
 }
-
-// export default Home;
