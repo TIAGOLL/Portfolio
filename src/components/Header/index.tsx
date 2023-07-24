@@ -1,3 +1,4 @@
+'use client'
 import MenuIcon from '@/icons/MenuIcon';
 import { useState } from 'react';
 import NavLogo from '../NavLogo';
@@ -11,7 +12,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="bg-secondary flex flex-row w-full text-white pt-2 pl-4 pr-4 lg:pb-10">
+            <header className="bg-secondary flex flex-row w-full text-white pt-2 pl-5 pr-5 lg:pb-10">
                 <NavLogo />
                 <div className='flex w-full items-center justify-end'>
                     <nav className="space-x-12 hidden flex-row items-center justify-center font-bold lg:flex pr-10">
@@ -24,7 +25,7 @@ const Header = () => {
                     {isVisible && (
                         <div className='justify-center items-center lg:hidden'>
                             <button onClick={() => setVisible((prev) => !prev)}>
-                                <MenuIcon width={20} strokeWidht={'2.5'} />
+                                <MenuIcon width={30} strokeWidht={'2.5'} />
                             </button>
                         </div>)}
 

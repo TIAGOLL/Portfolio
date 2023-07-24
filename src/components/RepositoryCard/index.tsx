@@ -1,17 +1,14 @@
-import { RepoProps } from "@/types/repo";
+import { RepoProps } from "@/types/repoProps";
 import { AiOutlineAlignLeft } from 'react-icons/ai';
 import { FaCode, FaStar } from 'react-icons/fa';
 import { SiTrailforks } from 'react-icons/si';
 import { BsCalendar2DateFill } from 'react-icons/bs';
 import Link from 'next/link';
 
-const RepositoryCard = ({ name, language, html_url, forks_count, stargazers_count, created_at, description, homepage, size }: RepoProps) => {
 
-
+const RepositoryCard = async ({ name, language, html_url, forks_count, stargazers_count, created_at, description, homepage, size }: RepoProps) => {
 
     created_at = created_at.slice(0, 10).split('-').reverse().join('/');
-
-
 
     return (
         <div className="flex flex-col w-11/12 font-semibold items-center border-white text-zinc-700 shadow-cardRepos border-2 rounded-xl lg:m-6 lg:p-4 lg:w-5/12 ">

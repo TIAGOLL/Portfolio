@@ -1,14 +1,4 @@
-type sectionProps = {
-  width: string,
-  height: string,
-  text: string,
-  items: string,
-  justify: string,
-  children: React.ReactElement,
-}
-
 const Section = ({ width, text, items, justify, children, height }: sectionProps) => {
-
 
   return (
     <>

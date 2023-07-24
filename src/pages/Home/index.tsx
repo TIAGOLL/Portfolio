@@ -1,46 +1,19 @@
-'use client'
 import Header from "@/components/Header";
 import UsedTechs from "@/components/UsedTechs";
 import Footer from "@/components/Footer";
 import LoadingIcon from "@/icons/LodingIcon";
-import RepositoryCard from "@/components/RepositoryCard";
+import IfLoading from '@/components/IfLoading/index';
+import RepositoryCard from '@/components/RepositoryCard/index';
+
 import Image from "next/image";
-import { RepoProps } from '@/types/repo';
-import { useState, useEffect } from "react";
+import { Suspense, useEffect, useState } from 'react'
+import { RepoProps } from "@/types/repoProps";
+import { GitHubApi } from "@/api/GitHub";
 
 
-export default function Home() {
+export default async function Home() {
 
-    const [loading, setLoading] = useState(true)
-    const [repos, setRepos] = useState<RepoProps[] | []>(Array);
-
-    const gitHubApi = async () => {
-        try {
-            setLoading(true)
-            const response = await fetch('https://api.github.com/users/TIAGOLL/repos')
-            const data = await response.json()
-            console.log(data)
-            if (!data) {
-                throw 'Data está vazio'
-            }
-
-            let orderedRepos = data.sort((a: RepoProps, b: RepoProps) => b.stargazers_count - a.stargazers_count);
-
-            orderedRepos = orderedRepos.slice(0, 4);
-
-            setRepos(orderedRepos);
-
-        } catch (error) {
-            console.log(error)
-        } finally {
-            setLoading(false)
-        }
-
-    }
-
-    useEffect(() => {
-        gitHubApi()
-    }, [])
+    const data = await GitHubApi()
 
     return (
         <>
@@ -92,27 +65,13 @@ export default function Home() {
                                 <h1>Meus melhores projetos:</h1>
                             </div>
 
-                            {loading &&
-                                <>
-                                    {/* PC */}
-                                    <div className="items-center justify-center text-center flex-col p-20 hidden lg:flex">
-                                        <div className="animate-spin "><LoadingIcon /></div>
-                                        <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
-                                    </div>
-                                    {/* MOBILE */}
-                                    <div className="items-center justify-center text-center flex flex-col p-10 lg:hidden">
-                                        <div className="animate-spin "><LoadingIcon strokeWidht={15} /></div>
-                                        <p className="w-full flex flex-row text-left text-white font-bold text-xl">Carregando...</p>
-                                    </div>
-                                </>
-                            }
 
                             <div className="flex-col flex justify-center items-center pb-3 space-y-6 lg:space-y-0 lg:flex-wrap lg:flex-row">
-                                {
-                                    repos.map((repo: RepoProps) => (
+                                {/* <Suspense fallback={<IfLoading />}>
+                                    {data.map((repo: RepoProps) => (
                                         <RepositoryCard key={repo.name} {...repo} />
-                                    ))
-                                }
+                                    ))}
+                                </Suspense> */}
                             </div>
 
                         </div>

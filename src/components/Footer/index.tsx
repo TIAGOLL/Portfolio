@@ -7,62 +7,68 @@ import { MdWorkOutline } from 'react-icons/md'
 const Footer = () => {
 
     return (
-        <footer className='flex flex-col bg-secondary text-white gap-2 p-2 mt-10'>
-
-
-            {/* contact */}
-            <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-1 shadow-lg">
-                <div className='w-full flex flex-col relative pb-2'>
-                    <h1 className="font-semibold">Contato</h1>
-                    <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
-                </div>
-                <div className='flex flex-row justify-start items-center gap-2'>
-                    <BiMailSend /><Link href={"mailto:tiagoepitanga10@gmail.com"} prefetch={false}> tiagoepitanga10@gmail.com</Link>
-                </div>
-                <div className='flex flex-row justify-start items-center gap-2'>
-                    <BiSolidPhoneCall /><p>(42) 98406-6420</p>
-                </div>
+        <footer className='flex flex-col items-center justify-center bg-secondary text-white gap-4 p-2 mt-10 text-md lg:text-lg lg:p-10'>
+            <div className="flex">
+                <Link className='hover:text-zinc-300' href={'/contact'} prefetch={false}>
+                    <h1 className="font-semibold font-mono text-2xl animate-bounce">Vamos trabalhar juntos?</h1>
+                </Link>
             </div>
+            <div className="flex flex-col items-center justify-center w-10/12 gap-10 lg:flex-row">
 
-            {/* social links */}
-            <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-1 shadow-lg">
-                <div className='w-full flex flex-col relative pb-2'>
-                    <h1 className="font-semibold">Redes socias</h1>
-                    <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
+                {/* contact */}
+                <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-2 pr-4 pl-4 shadow-lg gap-1 lg:w-4/12 lg:h-48">
+                    <div className='w-full flex flex-col relative pb-2'>
+                        <h1 className="font-semibold font-mono text-lg">Contato</h1>
+                        <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
+                    </div>
+                    <div className='flex flex-row justify-start items-center gap-2'>
+                        <BiMailSend /><Link className='hover:text-zinc-300' href={"mailto:tiagoepitanga10@gmail.com"} prefetch={false}> tiagoepitanga10@gmail.com</Link>
+                    </div>
+                    <div className='flex flex-row justify-start items-center gap-2'>
+                        <BiSolidPhoneCall /><p>(42) 98406-6420</p>
+                    </div>
                 </div>
 
-                <div className="flex flex-row justify-start items-center gap-2">
-                    <BiLogoInstagram /><Link href={'https://www.instagram.com/tiagoemanueldelima/'}>Instagram</Link>
-                </div>
-                <div className="flex flex-row justify-start items-center gap-2">
-                    <BiLogoLinkedin /><Link href={'https://www.linkedin.com/in/tiago-emanuel-de-lima/'}>Linkedin</Link>
-                </div>
-                <div className="flex flex-row justify-start items-center gap-2">
-                    <BiLogoGithub /><Link href={'https://github.com/TIAGOLL'}>GitHub</Link>
-                </div>
-            </div>
+                {/* social links */}
+                <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-2 pr-4 pl-4 shadow-lg gap-1 lg:w-4/12 lg:h-48">
+                    <div className='w-full flex flex-col relative pb-2'>
+                        <h1 className="font-semibold text-lg">Redes socias</h1>
+                        <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
+                    </div>
 
-            {/* nav */}
-            <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-1 shadow-lg">
-                <div className='w-full flex flex-col relative pb-2'>
-                    <h1 className="font-semibold">Links</h1>
-                    <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
+                    <div className="flex flex-row justify-start items-center gap-2">
+                        <BiLogoInstagram /><Link className='hover:text-zinc-300' href={'https://www.instagram.com/tiagoemanueldelima/'} prefetch={false}>Instagram</Link>
+                    </div>
+                    <div className="flex flex-row justify-start items-center gap-2">
+                        <BiLogoLinkedin /><Link className='hover:text-zinc-300' href={'https://www.linkedin.com/in/tiago-emanuel-de-lima/'} prefetch={false}>Linkedin</Link>
+                    </div>
+                    <div className="flex flex-row justify-start items-center gap-2">
+                        <BiLogoGithub /><Link className='hover:text-zinc-300' href={'https://github.com/TIAGOLL'} prefetch={false}>GitHub</Link>
+                    </div>
                 </div>
-                <div className="flex flex-row justify-start items-center gap-2">
-                    <BiHome />
-                    <Link href={'/'} >Home</Link>
-                </div>
-                <div className="flex flex-row justify-start items-center gap-2">
-                    <BiBookBookmark />
-                    <Link href={'/education'}>Minha educação</Link>
-                </div>
-                <div className="flex flex-row justify-start items-center gap-2">
-                    <TbWriting />
-                    <Link href={'/myhistory'}>Minha história</Link>
-                </div>
-                <div className="flex flex-row justify-start items-center gap-2">
-                    <MdWorkOutline />
-                    <Link href={'/professional'}>Meu profissional</Link>
+
+                {/* page links */}
+                <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-2 pr-4 pl-4 shadow-lg gap-1 lg:w-4/12 lg:h-48">
+                    <div className='w-full flex flex-col relative pb-2'>
+                        <h1 className="font-semibold text-lg">Links</h1>
+                        <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
+                    </div>
+                    <div className="flex flex-row justify-start items-center gap-2">
+                        <BiHome />
+                        <Link className='hover:text-zinc-300' href={'/'} prefetch={false}>Home</Link>
+                    </div>
+                    <div className="flex flex-row justify-start items-center gap-2">
+                        <BiBookBookmark />
+                        <Link className='hover:text-zinc-300' href={'/education'} prefetch={false}>Minha educação</Link>
+                    </div>
+                    <div className="flex flex-row justify-start items-center gap-2">
+                        <TbWriting />
+                        <Link className='hover:text-zinc-300' href={'/myhistory'} prefetch={false}>Minha história</Link>
+                    </div>
+                    <div className="flex flex-row justify-start items-center gap-2">
+                        <MdWorkOutline />
+                        <Link className='hover:text-zinc-300' href={'/professional'} prefetch={false}>Meu profissional</Link>
+                    </div>
                 </div>
             </div>
         </footer>

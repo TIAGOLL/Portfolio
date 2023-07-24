@@ -1,5 +1,5 @@
 
-import { Icons } from '@/types/icons';
+import { Icons } from '@/types/iconsProps';
 
 const LoadingIcon = ({ color = 'white', widht = 50, height = widht, strokeWidht = 12 }: Icons) => {
     return (
