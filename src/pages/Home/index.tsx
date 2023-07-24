@@ -1,3 +1,4 @@
+'use client'
 import Header from "@/components/Header";
 import UsedTechs from "@/components/UsedTechs";
 import Footer from "@/components/Footer";
@@ -6,7 +7,7 @@ import IfLoading from '@/components/IfLoading/index';
 import RepositoryCard from '@/components/RepositoryCard/index';
 
 import Image from "next/image";
-import { Suspense, useEffect, useState } from 'react'
+import { Suspense } from 'react'
 import { RepoProps } from "@/types/repoProps";
 import { GitHubApi } from "@/api/GitHub";
 
@@ -67,11 +68,11 @@ export default async function Home() {
 
 
                             <div className="flex-col flex justify-center items-center pb-3 space-y-6 lg:space-y-0 lg:flex-wrap lg:flex-row">
-                                {/* <Suspense fallback={<IfLoading />}>
+                                <Suspense fallback={<IfLoading />}>
                                     {data.map((repo: RepoProps) => (
                                         <RepositoryCard key={repo.name} {...repo} />
                                     ))}
-                                </Suspense> */}
+                                </Suspense>
                             </div>
 
                         </div>
