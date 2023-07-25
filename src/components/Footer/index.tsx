@@ -22,10 +22,12 @@ const Footer = () => {
                         <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
                     </div>
                     <div className='flex flex-row justify-start items-center gap-2'>
-                        <BiMailSend /><Link className='hover:text-zinc-300' href={"mailto:tiagoepitanga10@gmail.com"} prefetch={false}> tiagoepitanga10@gmail.com</Link>
+                        <BiMailSend />
+                        <Link target='_blank' className='hover:text-zinc-300' href={"mailto:tiagoepitanga10@gmail.com"} prefetch={false}> tiagoepitanga10@gmail.com</Link>
                     </div>
                     <div className='flex flex-row justify-start items-center gap-2'>
-                        <BiSolidPhoneCall /><p>(42) 98406-6420</p>
+                        <BiSolidPhoneCall />
+                        <p>(42) 98406-6420</p>
                     </div>
                 </div>
 
@@ -37,13 +39,16 @@ const Footer = () => {
                     </div>
 
                     <div className="flex flex-row justify-start items-center gap-2">
-                        <BiLogoInstagram /><Link className='hover:text-zinc-300' href={'https://www.instagram.com/tiagoemanueldelima/'} prefetch={false}>Instagram</Link>
+                        <BiLogoInstagram />
+                        <Link target='_blank' className='hover:text-zinc-300' href={'https://www.instagram.com/tiagoemanueldelima/'} prefetch={false}>Instagram</Link>
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
-                        <BiLogoLinkedin /><Link className='hover:text-zinc-300' href={'https://www.linkedin.com/in/tiago-emanuel-de-lima/'} prefetch={false}>Linkedin</Link>
+                        <BiLogoLinkedin />
+                        <Link target='_blank' className='hover:text-zinc-300' href={'https://www.linkedin.com/in/tiago-emanuel-de-lima/'} prefetch={false}>Linkedin</Link>
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
-                        <BiLogoGithub /><Link className='hover:text-zinc-300' href={'https://github.com/TIAGOLL'} prefetch={false}>GitHub</Link>
+                        <BiLogoGithub />
+                        <Link target='_blank' className='hover:text-zinc-300' href={'https://github.com/TIAGOLL'} prefetch={false}>GitHub</Link>
                     </div>
                 </div>
 
@@ -55,19 +60,19 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
                         <BiHome />
-                        <Link className='hover:text-zinc-300' href={'/'} prefetch={false}>Home</Link>
+                        <Link target='_self' className='hover:text-zinc-300' href={'/'} prefetch={false}>Home</Link>
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
                         <BiBookBookmark />
-                        <Link className='hover:text-zinc-300' href={'/education'} prefetch={false}>Minha educação</Link>
+                        <Link target='_self' className='hover:text-zinc-300' href={'/education'} prefetch={false}>Minha educação</Link>
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
                         <TbWriting />
-                        <Link className='hover:text-zinc-300' href={'/myhistory'} prefetch={false}>Minha história</Link>
+                        <Link target='_self' className='hover:text-zinc-300' href={'/myhistory'} prefetch={false}>Minha história</Link>
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
                         <MdWorkOutline />
-                        <Link className='hover:text-zinc-300' href={'/professional'} prefetch={false}>Meu profissional</Link>
+                        <Link target='_self' className='hover:text-zinc-300' href={'/professional'} prefetch={false}>Meu profissional</Link>
                     </div>
                 </div>
             </div>
