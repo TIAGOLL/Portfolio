@@ -3,20 +3,22 @@ import Link from 'next/link';
 import { BiSolidPhoneCall, BiMailSend, BiLogoInstagram, BiLogoLinkedin, BiLogoGithub, BiHome, BiBookBookmark } from 'react-icons/bi'
 import { TbWriting } from 'react-icons/tb'
 import { MdWorkOutline } from 'react-icons/md'
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 
 const Footer = () => {
 
     return (
-        <footer className='flex flex-col items-center justify-center bg-secondary text-white gap-4 p-2 mt-10 text-md lg:text-lg lg:p-10'>
-            <div className="flex">
-                <Link className='hover:text-zinc-300' href={'/contact'} prefetch={false}>
-                    <h1 className="font-semibold font-mono text-2xl animate-bounce">Vamos trabalhar juntos?</h1>
+        <footer className='flex flex-col items-center justify-center bg-secondary text-white gap-4 mt-10 text-md lg:text-lg lg:p-10'>
+            <div className="flex pt-5 lg:pt-0">
+                <Link className='hover:text-zinc-300 animate-bounce flex-row flex justify-center items-center gap-4' href={'/contact'} prefetch={false}>
+                    <h1 className="font-semibold font-mono text-2xl">Vamos trabalhar juntos?</h1>
+                    <HiOutlineArrowNarrowRight size={25} />
                 </Link>
             </div>
-            <div className="flex flex-col items-center justify-center w-10/12 gap-10 lg:flex-row">
+            <div className="flex flex-col items-center justify-center w-10/12 gap-5 lg:gap-10 lg:flex-row">
 
                 {/* contact */}
-                <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-2 pr-4 pl-4 shadow-lg gap-1 lg:w-4/12 lg:h-48">
+                <div className="flex flex-col rounded-lg border-2 border-zinc-500 pr-4 pl-4 shadow-lg gap-1 w-full lg:w-4/12 lg:h-48 lg:p-4">
                     <div className='w-full flex flex-col relative pb-2'>
                         <h1 className="font-semibold font-mono text-lg">Contato</h1>
                         <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
@@ -32,7 +34,7 @@ const Footer = () => {
                 </div>
 
                 {/* social links */}
-                <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-2 pr-4 pl-4 shadow-lg gap-1 lg:w-4/12 lg:h-48">
+                <div className="flex flex-col rounded-lg border-2 border-zinc-500 pr-4 pl-4 shadow-lg gap-1 w-full lg:w-4/12 lg:h-48 lg:p-4">
                     <div className='w-full flex flex-col relative pb-2'>
                         <h1 className="font-semibold text-lg">Redes socias</h1>
                         <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
@@ -53,7 +55,7 @@ const Footer = () => {
                 </div>
 
                 {/* page links */}
-                <div className="flex flex-col rounded-lg border-2 border-zinc-500 p-2 pr-4 pl-4 shadow-lg gap-1 lg:w-4/12 lg:h-48">
+                <div className="flex flex-col rounded-lg border-2 border-zinc-500 pr-4 pl-4 shadow-lg gap-1 w-full lg:w-4/12 lg:h-48 lg:p-4">
                     <div className='w-full flex flex-col relative pb-2'>
                         <h1 className="font-semibold text-lg">Links</h1>
                         <span className='border-b-4 border- w-1/12 absolute left-0 bottom-1 rounded-full'></span>
