@@ -4,17 +4,21 @@ import { BiSolidPhoneCall, BiMailSend, BiLogoInstagram, BiLogoLinkedin, BiLogoGi
 import { TbWriting } from 'react-icons/tb'
 import { MdWorkOutline } from 'react-icons/md'
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
+import NavLink from '@/components/NavLink';
 
 const Footer = ({ HideWorkTogether = true }: FooterProps) => {
 
     return (
         <footer className='flex flex-col w-full items-center justify-center bg-secondary text-white gap-4 pt-10 pb-10 mt-10 text-md lg:text-lg lg:p-10'>
-            {HideWorkTogether && <div className="flex lg:pt-0">
-                <Link className='hover:text-zinc-300 animate-bounce flex-row flex justify-center items-center gap-4' href={'/contact'} prefetch={false}>
-                    <h1 className="font-semibold font-mono text-2xl">Vamos trabalhar juntos?</h1>
-                    <HiOutlineArrowNarrowRight size={25} />
-                </Link>
-            </div>}
+            {HideWorkTogether &&
+                <div className="flex lg:pt-0">
+                    <NavLink href={'/contact'} prefetch={false}>
+                        <div className='flex flex-row items-center justify-center gap-4'>
+                            <h1 className="font-semibold font-mono text-2xl">Vamos trabalhar juntos?</h1>
+                            <HiOutlineArrowNarrowRight size={25} />
+                        </div>
+                    </NavLink>
+                </div>}
             <div className="flex flex-col items-center justify-center w-10/12 gap-5 lg:gap-10 lg:flex-row">
 
                 {/* contact */}
