@@ -3,6 +3,7 @@ import MenuIcon from '@/icons/MenuIcon';
 import { useState } from 'react';
 import NavLogo from '../NavLogo';
 import NavLink from '../NavLink';
+import { RemoveScroll } from 'react-remove-scroll';
 
 
 
@@ -38,14 +39,17 @@ const Header = () => {
 
 
                     {!isVisible && (
-                        <div className="w-full h-[calc(100vh-81px)] fixed top-14 left-0 bg-white">
-                            <div className="flex flex-col items-stretch justify-center">
-                                <NavLink href={'/myhistory'}>Minha história</NavLink>
-                                <NavLink href={'/projects'}>Projetos</NavLink>
-                                <NavLink href={'/education'}>Educação</NavLink>
-                                <NavLink href={'/professional'}>Profissional</NavLink>
+                        <RemoveScroll>
+                            <div className="w-full h-[calc(100vh)] fixed top-14 left-0 bg-white overflow-hidden">
+                                <div className="flex flex-col items-stretch justify-center">
+                                    <NavLink href={'/myhistory'}>Minha história</NavLink>
+                                    <NavLink href={'/projects'}>Projetos</NavLink>
+                                    <NavLink href={'/education'}>Educação</NavLink>
+                                    <NavLink href={'/professional'}>Profissional</NavLink>
+                                </div>
                             </div>
-                        </div>)}
+                        </RemoveScroll>
+                    )}
                 </div>
 
 

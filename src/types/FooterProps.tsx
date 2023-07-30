@@ -1,0 +1,3 @@
+type FooterProps = {
+    HideWorkTogether?: boolean;
+}

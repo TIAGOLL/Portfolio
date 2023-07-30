@@ -24,9 +24,10 @@ export default function Home() {
 
   return (
     <>
-      {/* MOBILE */}
-      <body className='w-full items-center justify-center flex'>
+      <body className='w-screen h-screen items-center justify-center flex'>
         <Header />
+
+        {/* MOBILE */}
         <div className='pb-20 p-2 w-full flex bg-secondary flex-col items-center justify-center mb-10 lg:hidden'>
 
           <div className="w-48 items-center justify-center flex pt-5 lg:w-4/12">
