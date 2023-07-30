@@ -1,1 +1,9 @@
-fazer com pattern de composicação
+const FormCard = () => {
+    return (
+        <>
+
+        </>
+    );
+}
+
+export default FormCard;
