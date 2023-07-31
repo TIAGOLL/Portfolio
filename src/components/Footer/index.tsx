@@ -12,7 +12,7 @@ const Footer = ({ HideWorkTogether = true }: FooterProps) => {
         <footer className='flex flex-col w-full items-center justify-center bg-secondary text-white gap-4 pt-10 pb-10 mt-10 text-md lg:text-lg lg:p-10'>
             {HideWorkTogether &&
                 <div className="flex lg:pt-0">
-                    <NavLink href={'/contact'} prefetch={false}>
+                    <NavLink href={'contact'} prefetch={false}>
                         <div className='flex flex-row items-center justify-center gap-4'>
                             <h1 className="font-semibold font-mono text-2xl">Vamos trabalhar juntos?</h1>
                             <HiOutlineArrowNarrowRight size={25} />
@@ -70,15 +70,15 @@ const Footer = ({ HideWorkTogether = true }: FooterProps) => {
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
                         <BiBookBookmark />
-                        <Link target='_self' className='hover:text-zinc-300' href={'/education'} prefetch={false}>Minha educação</Link>
+                        <Link target='_self' className='hover:text-zinc-300' href={'education'} prefetch={false}>Minha educação</Link>
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
                         <TbWriting />
-                        <Link target='_self' className='hover:text-zinc-300' href={'/myhistory'} prefetch={false}>Minha história</Link>
+                        <Link target='_self' className='hover:text-zinc-300' href={'myhistory'} prefetch={false}>Minha história</Link>
                     </div>
                     <div className="flex flex-row justify-start items-center gap-2">
                         <MdWorkOutline />
-                        <Link target='_self' className='hover:text-zinc-300' href={'/professional'} prefetch={false}>Meu profissional</Link>
+                        <Link target='_self' className='hover:text-zinc-300' href={'professional'} prefetch={false}>Meu profissional</Link>
                     </div>
                 </div>
             </div>
